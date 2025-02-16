@@ -1,6 +1,6 @@
 This project is a real-time Python Dashboard using the dash, pandas, threading and plotly packages and libraries. 
 
-The Dashboard opens to a new browser and feature real-time updates. The CSV file serves as the data source, so that
+The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
 any changes or data added to the CSV will automatically be updated in the dashboard. 
 This shopping trend dashboard features useful analysis such as real-time purchase amounts and purchase updates, 
 top 5 purchase items and top 5 locations. A filter function for location is also added. 
