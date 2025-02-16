@@ -12,3 +12,6 @@ at regular intervals, the dcc.Interval component in Dash is used. It triggers th
 and update the graphs in real-time.
 
 The Dash server is a powerful tool that allows users to interact with graphs and visualizations through a web browser.
+
+Here's the Dashboard: (relative/path/to/dash.png)
+
