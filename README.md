@@ -61,4 +61,7 @@ gcloud auth application-default login
 This real-time dashboard simply fetches data from the bigquery-public-data.google-trends dataset using SQL within the Python code.
 After fetching data, it then displays in a webbrowser the top google terms in a table and a graph.
 
+BiqQuery Real-time Dashboard: 
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/BigQuery-GoogleSearch-TopTrends-Dashboard/bigquerydashboard_top-google-terms-last30-days.png)
+
 
