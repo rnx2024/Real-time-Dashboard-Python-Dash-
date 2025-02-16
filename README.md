@@ -13,5 +13,5 @@ and update the graphs in real-time.
 
 The Dash server is a powerful tool that allows users to interact with graphs and visualizations through a web browser.
 
-Here's the Dashboard: (relative/path/to/dash.png)
+Here's the Dashboard: (https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dash.png))
 
