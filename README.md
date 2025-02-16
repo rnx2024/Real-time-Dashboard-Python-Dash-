@@ -38,4 +38,5 @@ The callback function in Dash updates the dashboard components at specific inter
      Output('total-purchase-count', 'children')],
     [Input('interval-component', 'n_intervals'),
      Input('location-filter', 'value')]
+)
      </i>
