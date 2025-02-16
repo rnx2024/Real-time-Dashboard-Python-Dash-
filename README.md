@@ -14,7 +14,9 @@ and update the graphs in real-time.
 The Dash server is a powerful tool that allows users to interact with graphs and visualizations through a web browser. The Dash also 
 allows the use of CSS to arrange a neat and compact dashboard. By using the FLexbox functionality (CSS), 
 
-<i>app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, children=[</i>
+```python
+app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, children=[
+```
 
 the dashboard is created using 2 columns and several rows to arrange a compact Dashboard that fits the screen well. 
 
@@ -30,13 +32,14 @@ The callback function in Dash updates the dashboard components at specific inter
         n_intervals=0
     ) </i>
 
-<i> @app.callback(
-    [Output('live-update-graph', 'figure'),
-     Output('top-items-graph', 'figure'),
-     Output('top-locations-graph', 'figure'),
-     Output('total-purchase-amount', 'children'),
-     Output('total-purchase-count', 'children')],
-    [Input('interval-component', 'n_intervals'),
-     Input('location-filter', 'value')]
+```python
+@app.callback(
+[Output('live-update-graph', 'figure'),
+ Output('top-items-graph', 'figure'),
+ Output('top-locations-graph', 'figure'),
+ Output('total-purchase-amount', 'children'),
+ Output('total-purchase-count', 'children')],
+[Input('interval-component', 'n_intervals'),
+ Input('location-filter', 'value')]
 )
-     </i>
+```
