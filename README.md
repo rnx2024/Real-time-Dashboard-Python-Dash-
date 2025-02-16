@@ -46,13 +46,13 @@ I have added another folder which contains a new real-time dashboard which makes
 Pandas, dash, dash_bootstrap_components, plotly, threading are used for this additional dashboard. The dashboard also opens
 to a new tab in the default browsser tab. 
 
-To use this new Dashboard, you must have your own BigQuery account. You can make use of the BigQuery Sandbox, a free account. 
+To use this new Dashboard, you must have your own BigQuery account. You can make use of the BigQuery Sandbox, which is free. 
 Read up on this for instructions on how: <https://cloud.google.com/bigquery/docs/sandbox> 
 
 You will also need to install the Google Cloud CLI <https://cloud.google.com/sdk/docs/install>. Make sure that the Google Cloud
 CLI is set to PATH during installation. 
 
-I made use of VS Code (using the Python extension) and installed the Google Cloud BigQuery extension. I also needed Google
+I made use of VS Code (using the Python extension) and also installed the Google Cloud BigQuery extension. I also needed Google
 Cloud's authorization and ran this: 
 
 ```
