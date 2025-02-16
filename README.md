@@ -11,7 +11,12 @@ The Timer function is used to open a web browser and run the Dash server. For fe
 at regular intervals, the dcc.Interval component in Dash is used. It triggers the callback function to reload the CSV data 
 and update the graphs in real-time.
 
-The Dash server is a powerful tool that allows users to interact with graphs and visualizations through a web browser.
+The Dash server is a powerful tool that allows users to interact with graphs and visualizations through a web browser. The Dash also 
+allows the use of CSS to arrange a neat and compact dashboard. By using the FLexbox functionality (CSS), 
+
+<i>app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, children=[</i>
+
+the dashboard is created using 2 columns and several rows to arrange a compact Dashboard that fits the screen well. 
 
 Here's the Dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dash.png)
