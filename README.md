@@ -30,11 +30,12 @@ The callback function in Dash updates the dashboard components at specific inter
         n_intervals=0
     ) </i>
 
-<i>@app.callback(
+<i> @app.callback(
     [Output('live-update-graph', 'figure'),
      Output('top-items-graph', 'figure'),
      Output('top-locations-graph', 'figure'),
      Output('total-purchase-amount', 'children'),
      Output('total-purchase-count', 'children')],
     [Input('interval-component', 'n_intervals'),
-     Input('location-filter', 'value')]</i>
+     Input('location-filter', 'value')]
+     </i>
