@@ -22,3 +22,19 @@ Here's the Dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dash.png)
 
 
+The callback function in Dash updates the dashboard components at specific intervals (in milliseconds) and when certain filters are applied. 
+
+    <i> dcc.Interval(
+        id='interval-component',
+        interval=1*1000,  
+        n_intervals=0
+    ) </i>
+
+<i>@app.callback(
+    [Output('live-update-graph', 'figure'),
+     Output('top-items-graph', 'figure'),
+     Output('top-locations-graph', 'figure'),
+     Output('total-purchase-amount', 'children'),
+     Output('total-purchase-count', 'children')],
+    [Input('interval-component', 'n_intervals'),
+     Input('location-filter', 'value')]</i>
