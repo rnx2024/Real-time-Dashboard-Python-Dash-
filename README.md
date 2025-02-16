@@ -42,8 +42,8 @@ components at specific intervals and when certain filters are applied.
  Output('total-purchase-count', 'children')],
 ```
 
-I have added another folder which contains a new real-time dashboard which makes use of google cloud and bigquery data. 
-Pandas, dash, dash_bootstrap_components,plotly,threading are used for this additional dashboard. The dashboard also opens
+I have added another folder which contains a new real-time dashboard which makes use of Google Cloud and BigQuery data. 
+Pandas, dash, dash_bootstrap_components, plotly, threading are used for this additional dashboard. The dashboard also opens
 to a new tab in the default browsser tab. 
 
 To use this new Dashboard, you must have your own BigQuery account. You can make use of the BigQuery Sandbox, a free account. 
