@@ -24,7 +24,8 @@ Here's the Dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dash.png)
 
 
-The callback function in Dash updates the dashboard components at specific intervals (in milliseconds) and when certain filters are applied. 
+By using the interval function, the real-time updates are set every second. The callback function updates the dashboard 
+components at specific intervals and when certain filters are applied. 
 
     <i> dcc.Interval(
         id='interval-component',
