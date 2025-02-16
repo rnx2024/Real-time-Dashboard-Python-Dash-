@@ -8,11 +8,10 @@ import webbrowser
 from threading import Timer
 
 def load_data():
-    return pd.read_csv(r'C:\Users\acer\Documents\data_analysis_project\ExcelDashboard\shopping-trends.csv')
+    return pd.read_csv(r'shopping-trends.csv')
 
 df = load_data()
 
-# Define a color palette with more neutral shades
 main_graph_palette = ['#4e79a7', '#59a14f', '#9c755f', '#f28e2b', '#edc948', '#e15759', '#76b7b2', '#ff9da7', '#af7aa1']
 
 app = dash.Dash(__name__)
@@ -60,7 +59,7 @@ app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, childr
     
     dcc.Interval(
         id='interval-component',
-        interval=1*1000,  # in milliseconds
+        interval=1*1000,  
         n_intervals=0
     )
 ])
@@ -76,25 +75,22 @@ app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, childr
 )
 def update_graphs(n, selected_locations):
     try:
-        # Reload data from CSV
+        
         df = load_data()
         
-        # Apply filters
         if selected_locations:
             df = df[df['Location'].isin(selected_locations)]
         
-        # Calculate total purchase amount and counts
         total_purchase_amount = df['Purchase Amount (USD)'].sum()
         total_purchase_count = df.shape[0]
         
-        # Create the main graph with more neutral colors
         main_fig = go.Figure(
-            data=[go.Bar(x=df['Item Purchased'], y=df['Purchase Amount (USD)'],
+        data=[go.Bar(x=df['Item Purchased'], y=df['Purchase Amount (USD)'],
                          marker=dict(color=main_graph_palette[:len(df['Item Purchased'].unique())]))],
             layout=go.Layout(title='Real-Time Data', xaxis=dict(title='Item Purchased'), yaxis=dict(title='Purchase Amount (USD)'))
         )
         
-        # Create the top 5 items graph
+        
         top_items = df.groupby('Item Purchased')['Purchase Amount (USD)'].sum().nlargest(5).reset_index()
         top_items_fig = go.Figure(
             data=[go.Bar(x=top_items['Item Purchased'], y=top_items['Purchase Amount (USD)'],
@@ -102,7 +98,7 @@ def update_graphs(n, selected_locations):
             layout=go.Layout(title='Top 5 Items', xaxis=dict(title='Item Purchased'), yaxis=dict(title='Total Purchase Amount (USD)'))
         )
         
-        # Create the top 5 locations graph for the top 5 items
+        
         top_items_df = df[df['Item Purchased'].isin(top_items['Item Purchased'])]
         top_locations = top_items_df.groupby('Location')['Purchase Amount (USD)'].sum().nlargest(5).reset_index()
         top_locations_fig = go.Figure(
