@@ -31,7 +31,6 @@ WHERE daily_rank <= 5
 ORDER BY date, rank
 """
 
-# Execute the query with caching disabled and convert to DataFrame
 print("Executing query...")
 job_config = bigquery.QueryJobConfig(use_query_cache=False)
 query_job_30_days = client.query(query_30_days, job_config=job_config)
