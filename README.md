@@ -73,3 +73,9 @@ An AWS Cloud S3 Dashboard is added. This makes use of a dataset within an AWS Cl
 
 This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
+
+Another code file was added <https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awss3bucket_improved_dash.py>
+which enhanced the design of the dashboard. Additional sytling were added to the summary statistics and the dropdown menu.
+
+Here's the improved dashboard:
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awsclouds3bucket_enhanced-dashboard-design.png)
