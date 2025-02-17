@@ -40,7 +40,28 @@ components at specific intervals and when certain filters are applied.
  Output('top-locations-graph', 'figure'),
  Output('total-purchase-amount', 'children'),
  Output('total-purchase-count', 'children')],
-[Input('interval-component', 'n_intervals'),
- Input('location-filter', 'value')]
-)
 ```
+
+I have added another folder which contains a new real-time dashboard which makes use of Google Cloud and BigQuery data. 
+Pandas, dash, dash_bootstrap_components, plotly, threading are used for this additional dashboard. The dashboard also opens
+to a new tab in the default browsser tab. 
+
+To use this new Dashboard, you must have your own BigQuery account. You can make use of the BigQuery Sandbox, which is free. 
+Read up on this for instructions on how: <https://cloud.google.com/bigquery/docs/sandbox> 
+
+You will also need to install the Google Cloud CLI <https://cloud.google.com/sdk/docs/install>. Make sure that the Google Cloud
+CLI is set to PATH during installation. 
+
+I made use of VS Code (using the Python extension) and also installed the Google Cloud BigQuery extension. I also needed Google
+Cloud's authorization and ran this: 
+
+```
+gcloud auth application-default login
+```
+This real-time dashboard simply fetches data from the bigquery-public-data.google-trends dataset using SQL within the Python code.
+After fetching data, it then displays in a webbrowser the top google terms in a table and a graph.
+
+BiqQuery Real-time Dashboard: 
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/BigQuery-GoogleSearch-TopTrends-Dashboard/bigquerydashboard_top-google-terms-last30-days.png)
+
+
