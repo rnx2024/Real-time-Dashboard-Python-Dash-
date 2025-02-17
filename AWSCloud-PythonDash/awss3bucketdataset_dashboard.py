@@ -35,7 +35,7 @@ total_purchase_amounts = df[purchase_amount_column].sum()
 # Initialize Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-# Layout of the dashboard
+# Dashboard layout
 app.layout = dbc.Container(fluid=True, children=[
     dbc.Row([
         dbc.Col([
@@ -71,7 +71,6 @@ app.layout = dbc.Container(fluid=True, children=[
     ])
 ])
 
-# Callbacks to update charts and tables
 @app.callback(
     Output('category-bar-chart', 'figure'),
     Output('payment-method-pie-chart', 'figure'),
@@ -87,11 +86,9 @@ def update_dashboard(location):
 
     return category_bar_chart, payment_method_pie_chart, shipping_type_pie_chart
 
-# Function to open the browser automatically
 def open_browser():
     webbrowser.open_new("http://127.0.0.1:8050/")
 
-# Run the Dash app
 if __name__ == '__main__':
     Timer(1, open_browser).start()
     app.run_server(debug=True)
