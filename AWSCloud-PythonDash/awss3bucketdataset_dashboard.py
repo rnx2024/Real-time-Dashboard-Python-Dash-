@@ -18,9 +18,6 @@ csv_content = response['Body'].read().decode('utf-8')
 
 df = pd.read_csv(StringIO(csv_content))
 
-print(df.columns)
-print(df.head())
-
 customer_id_column = 'Customer ID'
 age_column = 'Age'
 gender_column = 'Gender'
