@@ -69,4 +69,10 @@ The code for the BigQuery dataset has been edited (gooogle-terms-with-filter.py)
 Here's the new dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dashboard-with-filter.png)
 
+The AWS Cloud S3 Dashboard is added. It makes use of the the AWS S3 bucket by retrieving the data and loading it to memory. It makes use of the callback function 
+to make real-time updates. For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more
+efficient use. 
 
+This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
+
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
