@@ -79,3 +79,27 @@ which enhanced the design of the dashboard. Additional sytling were added to the
 
 Here's the improved dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awsclouds3bucket_enhanced-dashboard-design.png)
+
+4. MySQL Dashboard. A Delivery Performance Dashboard is added. Data is fetched from MySQL using a SQLAlchemy and pandas to interact with MySQL.
+The dashboard provides the following features:
+
+Monthly Filter: Select a month to filter the data and visualize performance for the chosen period.
+
+Top Customer Areas: Displays the top 5 customer areas in a pie chart, highlighting the distribution of customers.
+
+Top Feedback/Sentiment: Shows the most common feedback category for each month in a bar chart, offering insights into customer feedback trends.
+
+Total Order Value: Provides the total value of orders for the selected month, giving a quick overview of sales performance.
+
+Average Delivery Time Difference: Calculates and displays the average difference between promised and actual delivery times, helping to assess delivery efficiency.
+
+Data processing and visualization are handled using the pandas library and Plotly for creating interactive graphs and charts. 
+The dashboard is built with Dash and Bootstrap for a responsive and user-friendly interface.
+
+Here's the new dashboard:
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/MYSQL_Dashboard/MySQL%20Plotly_Dash.png)
+
+The MYSQL_Dashboard folder contains all the code for data_fetching, callbacks, layouts and the actual app deployment. The MySQL credentials which were used to access the database were explicitly removed but you can change these according to your MySQL credentials. The dataset used can be downloaded at <https://www.kaggle.com/datasets/arunkumaroraon/blinkit-grocery-dataset>. These full datasets were migrated to MySQL database using the MySQL Workbench. If you do not have the MySQL or Workbench, you can download it here <https://dev.mysql.com/downloads/> based on your system requirements. 
+
+Changes mades to the dataset during migration: As MySQL have certain rules for date formats (yyyy-mm-dd), these were changed during the migration. Certain column names with reserved words in MySQL such as date, channel were also changed to facilitate full and accurate data migration. The date for the blinkit_inventorynew dataset were all changed to yyyy-mm-dd from the format mm-dd and appended with year 2024. 
+
