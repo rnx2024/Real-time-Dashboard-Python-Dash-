@@ -1,6 +1,6 @@
 This project are collection of real-time Python Dashboards using the dash, pandas, threading and plotly, and boto3 packages and libraries. 
 
-The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
+1. Dataset-based Dashboard. The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
 any changes or data added to the CSV will automatically be updated in the dashboard. 
 This shopping trend dashboard features useful analysis such as real-time purchase amounts and purchase updates, 
 top 5 purchase items and top 5 locations. A filter function for location is also added. 
@@ -42,7 +42,7 @@ components at specific intervals and when certain filters are applied.
  Output('total-purchase-count', 'children')],
 ```
 
-I have added another folder which contains a new real-time dashboard which makes use of Google Cloud and BigQuery data. 
+2. Google BigQuery Dashboard. I have added another folder which contains a new real-time dashboard which makes use of Google Cloud and BigQuery data. 
 Pandas, dash, dash_bootstrap_components, plotly, threading are used for this additional dashboard. The dashboard also opens
 to a new tab in the default browsser tab. 
 
@@ -69,7 +69,7 @@ The code for the BigQuery dataset has been edited (gooogle-terms-with-filter.py)
 Here's the new dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dashboard-with-filter.png)
 
-An AWS Cloud S3 Dashboard is added. This makes use of a dataset within an AWS Cloud S3 bucket. It retrieves the data from the S3 bucket and load it to memory. It makes use of the callback function to make real-time updates. For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient use. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python.
+3. AWS Cloud S3 Dashboard. An AWS Cloud S3 Dashboard is added. This makes use of a dataset within an AWS Cloud S3 bucket. It retrieves the data from the S3 bucket and load it to memory. It makes use of the callback function to make real-time updates. For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient use. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python.
 
 This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
