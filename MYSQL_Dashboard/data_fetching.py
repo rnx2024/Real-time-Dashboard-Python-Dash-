@@ -2,10 +2,10 @@ from sqlalchemy import create_engine
 import pandas as pd
 
 # Database configuration
-user = 'root'
-password = '0802jpb'
+user = 'username'
+password = 'password'
 host = '127.0.0.1'
-database = 'blinkist'
+database = 'name_of_your_database'
 
 # Create an SQLAlchemy engine
 engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
