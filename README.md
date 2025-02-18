@@ -80,7 +80,7 @@ which enhanced the design of the dashboard. Additional sytling were added to the
 Here's the improved dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awsclouds3bucket_enhanced-dashboard-design.png)
 
-4. MySQL Dashboard. A Delivery Performance Dashboard is added. Data is fetched from MySQL using a SQLAlchemy and pandas to interact with MySQL.
+4. MySQL Dashboard. A Delivery Performance Dashboard is added. Data is fetched from MySQL using SQLAlchemy and pandas to interact with MySQL.
 The dashboard provides the following features:
 
 Monthly Filter: Select a month to filter the data and visualize performance for the chosen period.
