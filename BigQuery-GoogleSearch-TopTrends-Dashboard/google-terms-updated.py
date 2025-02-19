@@ -1,3 +1,4 @@
+# Import necessary libraries
 from google.cloud import bigquery
 import pandas as pd
 import dash
@@ -9,10 +10,13 @@ import webbrowser
 from threading import Timer
 from datetime import datetime, timedelta
 
+
 client = bigquery.Client(project="fifth-dynamics-443717-b9")
+
 
 end_date = datetime.now().date()
 start_date = end_date - timedelta(days=30)
+
 
 query_30_days = f"""
 WITH daily_terms AS (
@@ -36,12 +40,13 @@ job_config = bigquery.QueryJobConfig(use_query_cache=False)
 query_job_30_days = client.query(query_30_days, job_config=job_config)
 df_30_days = query_job_30_days.to_dataframe()
 print("Query executed and DataFrame created.")
-
 print(df_30_days.to_string(index=False))
 
 df_top5_30_days = df_30_days.groupby('date').head(5)
 
+# Initialize Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
 
 table_style = {
     'font-size': '10px',
@@ -77,5 +82,5 @@ def open_browser():
     webbrowser.open_new("http://127.0.0.1:8050/")
 
 if __name__ == '__main__':
-    Timer(1, open_browser).start()  # Delay opening the browser by 1 second
+    Timer(1, open_browser).start() 
     app.run_server(debug=True)
