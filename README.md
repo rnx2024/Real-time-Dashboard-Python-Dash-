@@ -61,10 +61,8 @@ gcloud auth application-default login
 This real-time dashboard simply fetches data from the bigquery-public-data.google-trends dataset using SQL within the Python code.
 After fetching data, it then displays in a webbrowser the top google terms in a table and a graph.
 
-BiqQuery Real-time Dashboard: 
-![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/BigQuery-GoogleSearch-TopTrends-Dashboard/bigquerydashboard_top-google-terms-last30-days.png)
-
-The code for the BigQuery dataset has been edited (gooogle-terms-with-filter.py) to feature a location filter. By choosing a location filter, the top search terms (weekly) within the last 30 days are visualized in the table and graph. 
+Note: The old code file for the BigQuery has been removed as the new code file (gooogle-terms-with-filter.py) and the dashboard image has been uploaded. This is to simplify the referred files.
+This new code file has been updated to feature a filter location by country. By choosing a location filter, the top search terms (weekly) within the last 30 days are visualized in the table and graph. 
 
 Here's the new dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dashboard-with-filter.png)
