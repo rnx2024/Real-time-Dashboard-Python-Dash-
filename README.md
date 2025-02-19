@@ -1,6 +1,6 @@
-This project is a real-time Python Dashboard using the dash, pandas, threading and plotly packages and libraries. 
+This project are collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages and libraries. 
 
-The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
+1. Dataset-based Dashboard. The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
 any changes or data added to the CSV will automatically be updated in the dashboard. 
 This shopping trend dashboard features useful analysis such as real-time purchase amounts and purchase updates, 
 top 5 purchase items and top 5 locations. A filter function for location is also added. 
@@ -42,7 +42,7 @@ components at specific intervals and when certain filters are applied.
  Output('total-purchase-count', 'children')],
 ```
 
-I have added another folder which contains a new real-time dashboard which makes use of Google Cloud and BigQuery data. 
+2. Google BigQuery Dashboard. I have added another folder which contains a new real-time dashboard which makes use of Google Cloud and BigQuery data. 
 Pandas, dash, dash_bootstrap_components, plotly, threading are used for this additional dashboard. The dashboard also opens
 to a new tab in the default browsser tab. 
 
@@ -64,4 +64,42 @@ After fetching data, it then displays in a webbrowser the top google terms in a 
 BiqQuery Real-time Dashboard: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/BigQuery-GoogleSearch-TopTrends-Dashboard/bigquerydashboard_top-google-terms-last30-days.png)
 
+The code for the BigQuery dataset has been edited (gooogle-terms-with-filter.py) to feature a location filter. By choosing a location filter, the top search terms (weekly) within the last 30 days are visualized in the table and graph. 
+
+Here's the new dashboard:
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dashboard-with-filter.png)
+
+3. AWS Cloud S3 Dashboard. An AWS Cloud S3 Dashboard is added. This makes use of a dataset within an AWS Cloud S3 bucket. It retrieves the data from the S3 bucket and load it to memory. It makes use of the callback function to make real-time updates. For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient use. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python.
+
+This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
+
+Another code file was added <https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awss3bucket_improved_dash.py>
+which enhanced the design of the dashboard. Additional sytling were added to the summary statistics and the dropdown menu.
+
+Here's the improved dashboard:
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awsclouds3bucket_enhanced-dashboard-design.png)
+
+4. MySQL Dashboard. A Delivery Performance Dashboard is added. Data is fetched from MySQL using SQLAlchemy and pandas to interact with MySQL.
+The dashboard provides the following features:
+
+Monthly Filter: Select a month to filter the data and visualize performance for the chosen period.
+
+Top Customer Areas: Displays the top 5 customer areas in a pie chart, highlighting the distribution of customers.
+
+Top Feedback/Sentiment: Shows the most common feedback category for each month in a bar chart, offering insights into customer feedback trends.
+
+Total Order Value: Provides the total value of orders for the selected month, giving a quick overview of sales performance.
+
+Average Delivery Time Difference: Calculates and displays the average difference between promised and actual delivery times, helping to assess delivery efficiency.
+
+Data processing and visualization are handled using the pandas library and Plotly for creating interactive graphs and charts. 
+The dashboard is built with Dash and Bootstrap for a responsive and user-friendly interface.
+
+Here's the new dashboard:
+![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/MYSQL_Dashboard/MySQL%20Plotly_Dash.png)
+
+The MYSQL_Dashboard folder contains all the code for data_fetching, callbacks, layouts and the actual app deployment. The MySQL credentials which were used to access the database were replaced with generic credentials but you can change these according to your MySQL credentials. The dataset used can be downloaded at <https://www.kaggle.com/datasets/arunkumaroraon/blinkit-grocery-dataset>. These full datasets were migrated to MySQL database using the MySQL Workbench. If you do not have the MySQL or Workbench, you can download it here <https://dev.mysql.com/downloads/> based on your system requirements. 
+
+Changes mades to the dataset during migration: As MySQL have certain rules for date formats (yyyy-mm-dd), these were changed during the migration. Certain column names with reserved words in MySQL such as date, channel were also changed to facilitate full and accurate data migration. The date for the blinkit_inventorynew dataset were all changed to yyyy-mm-dd from the format mm-dd and appended with year 2024. 
 

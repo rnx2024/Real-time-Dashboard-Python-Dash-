@@ -1,0 +1,13 @@
+.square-box {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 1px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.button-3d {
+    background-color: lightgreen;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
