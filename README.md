@@ -72,8 +72,7 @@ Here's the new dashboard:
 This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
 
-Another code file was added <https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awss3bucket_improved_dash.py>
-which enhanced the design of the dashboard. Additional sytling were added to the summary statistics and the dropdown menu.
+Another code file was added [![Button3](https://img.shields.io/badge/Click%20Me-AWSS3ImprovedDashboard-blue)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awss3bucket_improved_dash.py) which enhanced the design of the dashboard. Additional sytling were added to the summary statistics and the dropdown menu.
 
 Here's the improved dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awsclouds3bucket_enhanced-dashboard-design.png)
@@ -97,7 +96,7 @@ The dashboard is built with Dash and Bootstrap for a responsive and user-friendl
 Here's the new dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/MYSQL_Dashboard/MySQL%20Plotly_Dash.png)
 
-The MYSQL_Dashboard folder contains all the code for data_fetching, callbacks, layouts and the actual app deployment. The MySQL credentials which were used to access the database were replaced with generic credentials but you can change these according to your MySQL credentials. The dataset used can be downloaded at [![Button1](https://img.shields.io/badge/Click%20Me-BlinkitDataset-green)](https://www.kaggle.com/datasets/arunkumaroraon/blinkit-grocery-dataset). These full datasets were migrated to MySQL database using the MySQL Workbench. If you do not have the MySQL or Workbench, you can download it here [![Button1](https://img.shields.io/badge/Click%20Me-DownloadMySQL-red)](https://dev.mysql.com/downloads/) based on your system requirements. 
+The MYSQL_Dashboard folder contains all the code for data_fetching, callbacks, layouts and the actual app deployment. The MySQL credentials which were used to access the database were replaced with generic credentials but you can change these according to your MySQL credentials. The dataset used can be downloaded at [![Button4](https://img.shields.io/badge/Click%20Me-BlinkitDataset-green)](https://www.kaggle.com/datasets/arunkumaroraon/blinkit-grocery-dataset). These full datasets were migrated to MySQL database using the MySQL Workbench. If you do not have the MySQL or Workbench, you can download it here [![Button5](https://img.shields.io/badge/Click%20Me-DownloadMySQL-red)](https://dev.mysql.com/downloads/) based on your system requirements. 
 
 Changes mades to the dataset during migration: As MySQL have certain rules for date formats (yyyy-mm-dd), these were changed during the migration. Certain column names with reserved words in MySQL such as date, channel were also changed to facilitate full and accurate data migration. The date for the blinkit_inventorynew dataset were all changed to yyyy-mm-dd from the format mm-dd and appended with year 2024. 
 
