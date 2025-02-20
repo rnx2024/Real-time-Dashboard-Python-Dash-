@@ -1,4 +1,4 @@
-This project is a collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages and libraries. 
+This project is a collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages.
 
 1. Dataset-based Dashboard. The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
 any changes or data added to the CSV will automatically be updated in the dashboard. 
