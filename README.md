@@ -47,10 +47,10 @@ Pandas, dash, dash_bootstrap_components, plotly, threading are used for this add
 to a new tab in the default browsser tab. 
 
 To use this new Dashboard, you must have your own BigQuery account. You can make use of the BigQuery Sandbox, which is free. 
-Read up on this for instructions on how: <https://cloud.google.com/bigquery/docs/sandbox> 
+Read up on this for instructions on how: [![Button1](https://img.shields.io/badge/Click%20Me-BigQuerySandbox-purple)](https://cloud.google.com/bigquery/docs/sandbox)
 
-You will also need to install the Google Cloud CLI <https://cloud.google.com/sdk/docs/install>. Make sure that the Google Cloud
-CLI is set to PATH during installation. 
+You will also need to install the Google Cloud CLI [![Button2](https://img.shields.io/badge/Click%20Me-InstallGoogleCloudCLI-orange)](https://cloud.google.com/sdk/docs/install). 
+Make sure that the Google Cloud CLI is set to PATH during installation. 
 
 I made use of VS Code (using the Python extension) and also installed the Google Cloud BigQuery extension. I also needed Google
 Cloud's authorization and ran this: 
@@ -97,7 +97,7 @@ The dashboard is built with Dash and Bootstrap for a responsive and user-friendl
 Here's the new dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/MYSQL_Dashboard/MySQL%20Plotly_Dash.png)
 
-The MYSQL_Dashboard folder contains all the code for data_fetching, callbacks, layouts and the actual app deployment. The MySQL credentials which were used to access the database were replaced with generic credentials but you can change these according to your MySQL credentials. The dataset used can be downloaded at <https://www.kaggle.com/datasets/arunkumaroraon/blinkit-grocery-dataset>. These full datasets were migrated to MySQL database using the MySQL Workbench. If you do not have the MySQL or Workbench, you can download it here <https://dev.mysql.com/downloads/> based on your system requirements. 
+The MYSQL_Dashboard folder contains all the code for data_fetching, callbacks, layouts and the actual app deployment. The MySQL credentials which were used to access the database were replaced with generic credentials but you can change these according to your MySQL credentials. The dataset used can be downloaded at [![Button1](https://img.shields.io/badge/Click%20Me-BlinkitDataset-green)](https://www.kaggle.com/datasets/arunkumaroraon/blinkit-grocery-dataset). These full datasets were migrated to MySQL database using the MySQL Workbench. If you do not have the MySQL or Workbench, you can download it here [![Button1](https://img.shields.io/badge/Click%20Me-DownloadMySQL-red)](https://dev.mysql.com/downloads/) based on your system requirements. 
 
 Changes mades to the dataset during migration: As MySQL have certain rules for date formats (yyyy-mm-dd), these were changed during the migration. Certain column names with reserved words in MySQL such as date, channel were also changed to facilitate full and accurate data migration. The date for the blinkit_inventorynew dataset were all changed to yyyy-mm-dd from the format mm-dd and appended with year 2024. 
 
