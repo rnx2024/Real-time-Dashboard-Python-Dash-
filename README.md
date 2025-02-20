@@ -1,5 +1,6 @@
 # Real-Time Dashboards Created with Plotly and Dash
-
+<br>
+<br>
 <div style="text-align: center;">
   <img src="https://revenue.ai/wp-content/uploads/2023/06/Plotly-1.png" alt="Plotly" width="100" height="100">
   <img src="https://thumbs.dreamstime.com/b/dash-icon-flat-illustration-dash-vector-icon-web-dash-icon-flat-style-114331438.jpg" alt="Dash" width="100" height="100">
@@ -11,7 +12,8 @@
   <img src="https://www.seekpng.com/png/detail/348-3481904_images-pandas-logo-pandas-python-logo.png" alt="Pandas" width="100" height="100">
 </div>
 
-
+<br>
+<br>
 
 This project is a collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages.
 
