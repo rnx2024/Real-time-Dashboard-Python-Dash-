@@ -9,11 +9,14 @@ import webbrowser
 from threading import Timer
 from datetime import datetime, timedelta
 
+#connect to BigQuery project
 client = bigquery.Client(project="chatbot-446403")
 
+#Set start and end date for query
 end_date = datetime.now().date()
 start_date = end_date - timedelta(days=30)
 
+#Fetch data with queries
 def get_query(country_name, start_date, end_date, region_name=None):
     region_filter = f"AND region_name = '{region_name}'" if region_name else ""
     return f"""
@@ -111,7 +114,7 @@ app.layout = dbc.Container(fluid=True, children=[
         ], width=8)
     ])
 ])
-
+#Use callbacks to execute the update functions
 @app.callback(
     [Output('bar-graph-30-days', 'figure'),
      Output('data-table', 'children'),
@@ -136,6 +139,7 @@ def update_data(country_name, start_date, end_date, region_name):
     
     return figure, table, line_figure, percentage_gain_metric
 
+#Automatically opens a new tab in web browser for dashboard app
 def open_browser():
     webbrowser.open_new("http://127.0.0.1:8050/")
 
