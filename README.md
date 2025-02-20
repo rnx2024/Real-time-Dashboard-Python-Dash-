@@ -72,7 +72,9 @@ Another code file was added [![Button3](https://img.shields.io/badge/Click%20Me-
 Here's the improved dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awsclouds3bucket_enhanced-dashboard-design.png)
 
-4. MySQL Dashboard. [![Button3](https://img.shields.io/badge/Click%20Me-MySQL%20Dashboard%20Files-gold)]https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/tree/main/MYSQL_DashboardA Delivery Performance Dashboard is added. Data is fetched from MySQL using SQLAlchemy and pandas to interact with MySQL.
+4. MySQL Dashboard. [![Button4](https://img.shields.io/badge/Click%20Me-MySQL%20Dashboard%20Files-gold)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/tree/main/MYSQL_Dashboard)
+   A Delivery Performance Dashboard is added. Data is fetched from MySQL using SQLAlchemy and pandas to interact with MySQL.
+
 The dashboard provides the following features:
 
 Monthly Filter: Select a month to filter the data and visualize performance for the chosen period.
