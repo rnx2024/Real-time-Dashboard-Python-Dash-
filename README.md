@@ -1,5 +1,5 @@
 # Real-Time Dashboards Created with Plotly and Dash
-<hr style="border: .5px blue;">
+<hr style="border: 0; height: 1px; background-color: blue;">
 
 <br>
 <br>
