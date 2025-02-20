@@ -16,7 +16,7 @@ client = bigquery.Client(project="chatbot-446403")
 end_date = datetime.now().date()
 start_date = end_date - timedelta(days=30)
 
-#Fetch data with queries
+#Define queries
 def get_query(country_name, start_date, end_date, region_name=None):
     region_filter = f"AND region_name = '{region_name}'" if region_name else ""
     return f"""
