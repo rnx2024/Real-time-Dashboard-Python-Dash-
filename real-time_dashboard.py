@@ -14,6 +14,7 @@ df = load_data()
 
 main_graph_palette = ['#4e79a7', '#59a14f', '#9c755f', '#f28e2b', '#edc948', '#e15759', '#76b7b2', '#ff9da7', '#af7aa1']
 
+#Dashboard layourt
 app = dash.Dash(__name__)
 app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, children=[
     html.Div(style={'flex': '50%', 'padding': '10px'}, children=[
@@ -64,6 +65,7 @@ app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, childr
     )
 ])
 
+#Callbacks to update the graphs and the filter
 @app.callback(
     [Output('live-update-graph', 'figure'),
      Output('top-items-graph', 'figure'),
@@ -115,6 +117,7 @@ def update_graphs(n, selected_locations):
         print(f"Error updating graphs: {e}")
         return go.Figure(), go.Figure(), go.Figure(), '', ''
 
+#This will automatically open a new tab on the default browswer
 def open_browser():
     webbrowser.open_new("http://127.0.0.1:8050/")
 
