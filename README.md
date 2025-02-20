@@ -1,9 +1,12 @@
 # Real-Time Dashboards Created with Plotly and Dash
 
+![Image](https://revenue.ai/wp-content/uploads/2023/06/Plotly-1.png) 
+![Image](https://icons8.com/icon/Rc0Xn5AtE8kX/python)
 
 This project is a collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages.
 
-1. Dataset-based Dashboard. The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
+1. Dataset-based Dashboard. [![Button2](https://img.shields.io/badge/Download-KaggleDataset-blue)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/real-time_dashboard.py)
+The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
 any changes or data added to the CSV will automatically be updated in the dashboard. 
 This shopping trend dashboard features useful analysis such as real-time purchase amounts and purchase updates, 
 top 5 purchase items and top 5 locations. A filter function for location is also added. 
