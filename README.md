@@ -7,6 +7,7 @@
 <img src=https://e7.pngegg.com/pngimages/747/798/png-clipart-mysql-logo-mysql-database-web-development-computer-software-dolphin-marine-mammal-animals.png width="200" height="200">
 <img src=https://directdevops.blog/wp-content/uploads/2019/03/boto3.jpeg width="200" height="200">
 <img src=https://play-lh.googleusercontent.com/ARKZLqwqNpLiFYPABKjRdSmhSMqvLojpgSpXmapJFZI3PudmsHoqkjjOFycUOuHqBQ width="200" height="200">
+<img src=https://www.seekpng.com/png/detail/348-3481904_images-pandas-logo-pandas-python-logo.png width="200" height="200">
 
 
 This project is a collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages.
