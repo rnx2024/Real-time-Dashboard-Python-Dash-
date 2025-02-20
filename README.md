@@ -1,14 +1,15 @@
 # Real-Time Dashboards Created with Plotly and Dash
 
-![Image](https://revenue.ai/wp-content/uploads/2023/06/Plotly-1.png) 
-<img src=https://thumbs.dreamstime.com/b/dash-icon-flat-illustration-dash-vector-icon-web-dash-icon-flat-style-114331438.jpg width="200" height="200">
-<img src=https://www.liblogo.com/img-logo/aw314s096-aws-s3-logo-setting-up-aws-s3-for-open-edx-blog.png width="200" height="200">
-<img src=https://www.selectdistinct.co.uk/wp-content/uploads/2023/03/Google-Big-Query-jpg.webp width="200" height="200">
-<img src=https://e7.pngegg.com/pngimages/747/798/png-clipart-mysql-logo-mysql-database-web-development-computer-software-dolphin-marine-mammal-animals.png width="200" height="200">
-<img src=https://directdevops.blog/wp-content/uploads/2019/03/boto3.jpeg width="200" height="200">
-<img src=https://play-lh.googleusercontent.com/ARKZLqwqNpLiFYPABKjRdSmhSMqvLojpgSpXmapJFZI3PudmsHoqkjjOFycUOuHqBQ width="200" height="200">
-<img src=https://www.seekpng.com/png/detail/348-3481904_images-pandas-logo-pandas-python-logo.png width="200" height="200">
-
+<div style="text-align: center;">
+  <img src="https://revenue.ai/wp-content/uploads/2023/06/Plotly-1.png" alt="Plotly" width="100" height="100">
+  <img src="https://thumbs.dreamstime.com/b/dash-icon-flat-illustration-dash-vector-icon-web-dash-icon-flat-style-114331438.jpg" alt="Dash" width="100" height="100">
+  <img src="https://www.liblogo.com/img-logo/aw314s096-aws-s3-logo-setting-up-aws-s3-for-open-edx-blog.png" alt="AWS S3" width="100" height="100">
+  <img src="https://www.selectdistinct.co.uk/wp-content/uploads/2023/03/Google-Big-Query-jpg.webp" alt="Google Big Query" width="100" height="100">
+  <img src="https://e7.pngegg.com/pngimages/747/798/png-clipart-mysql-logo-mysql-database-web-development-computer-software-dolphin-marine-mammal-animals.png" alt="MySQL" width="100" height="100">
+  <img src="https://directdevops.blog/wp-content/uploads/2019/03/boto3.jpeg" alt="Boto3" width="100" height="100">
+  <img src="https://play-lh.googleusercontent.com/ARKZLqwqNpLiFYPABKjRdSmhSMqvLojpgSpXmapJFZI3PudmsHoqkjjOFycUOuHqBQ" alt="Google Drive" width="100" height="100">
+  <img src="https://www.seekpng.com/png/detail/348-3481904_images-pandas-logo-pandas-python-logo.png" alt="Pandas" width="100" height="100">
+</div>
 
 This project is a collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages.
 
