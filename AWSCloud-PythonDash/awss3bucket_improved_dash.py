@@ -10,7 +10,7 @@ import webbrowser
 from threading import Timer
 
 s3_client = boto3.client('s3')
-bucket_name = 'myfirstawsbucketlistforthisyear'
+bucket_name = 'myfirstawsbucketlist'
 object_name = 'shoppingtrends.csv'
 
 response = s3_client.get_object(Bucket=bucket_name, Key=object_name)
