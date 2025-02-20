@@ -42,9 +42,7 @@ components at specific intervals and when certain filters are applied.
  Output('total-purchase-count', 'children')],
 ```
 
-2. Google BigQuery Dashboard. I have added another folder which contains a new real-time dashboard which makes use of Google Cloud and BigQuery data. 
-Pandas, dash, dash_bootstrap_components, plotly, threading are used for this additional dashboard. The dashboard also opens
-to a new tab in the default browsser tab. 
+2. BigQuery Dashboard. [![Button1](https://img.shields.io/badge/Click%20Me-BigQueryDashboard%20Code%20File-red)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/google-top-terms-addl-filters.py) This dashboard for Top Google Search terms has a location filter.The top search terms (weekly) within the last 30 days are visualized in a table and graph. 
 
 To use this new Dashboard, you must have your own BigQuery account. You can make use of the BigQuery Sandbox, which is free. 
 Read up on this for instructions on how: [![Button1](https://img.shields.io/badge/Click%20Me-BigQuerySandbox-purple)](https://cloud.google.com/bigquery/docs/sandbox)
@@ -61,13 +59,10 @@ gcloud auth application-default login
 This real-time dashboard simply fetches data from the bigquery-public-data.google-trends dataset using SQL within the Python code.
 After fetching data, it then displays in a webbrowser the top google terms in a table and a graph.
 
-Note: The old code file for the BigQuery has been removed as the new code file (gooogle-terms-with-filter.py) and the dashboard image has been uploaded. This is to simplify the referred files.
-This new code file has been updated to feature a filter location by country. By choosing a location filter, the top search terms (weekly) within the last 30 days are visualized in the table and graph. 
-
-Here's the new dashboard:
+Here's the dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dashboard-with-filter.png)
 
-3. AWS Cloud S3 Dashboard. An AWS Cloud S3 Dashboard is added. This makes use of a dataset within an AWS Cloud S3 bucket. It retrieves the data from the S3 bucket and load it to memory. It makes use of the callback function to make real-time updates. For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient use. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python.
+3. AWS Cloud S3 Dashboard. [![Button1](https://img.shields.io/badge/Click%20Me-AWS%20Dashboard%20Files-pink)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/tree/main/AWSCloud-PythonDash) An AWS Cloud S3 Dashboard is added. This makes use of a dataset from an AWS Cloud S3 bucket. It retrieves the data from the S3 bucket and load it to memory. It makes use of the callback function to make real-time updates. For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient use. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python.
 
 This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
@@ -77,7 +72,7 @@ Another code file was added [![Button3](https://img.shields.io/badge/Click%20Me-
 Here's the improved dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awsclouds3bucket_enhanced-dashboard-design.png)
 
-4. MySQL Dashboard. A Delivery Performance Dashboard is added. Data is fetched from MySQL using SQLAlchemy and pandas to interact with MySQL.
+4. MySQL Dashboard. [![Button3](https://img.shields.io/badge/Click%20Me-MySQL%20Dashboard%20Files-gold)]https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/tree/main/MYSQL_DashboardA Delivery Performance Dashboard is added. Data is fetched from MySQL using SQLAlchemy and pandas to interact with MySQL.
 The dashboard provides the following features:
 
 Monthly Filter: Select a month to filter the data and visualize performance for the chosen period.
