@@ -11,6 +11,8 @@
   <img src="https://www.seekpng.com/png/detail/348-3481904_images-pandas-logo-pandas-python-logo.png" alt="Pandas" width="100" height="100">
 </div>
 
+
+
 This project is a collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages.
 
 1. Dataset-based Dashboard. [![Button2](https://img.shields.io/badge/Download-KaggleDataset-blue)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/real-time_dashboard.py)
