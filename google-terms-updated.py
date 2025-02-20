@@ -16,7 +16,7 @@ client = bigquery.Client(project="chatbot-446403")
 end_date = datetime.now().date()
 start_date = end_date - timedelta(days=30)
 
-# Define your query to select the top terms daily for the past 30 days
+# Select the top terms daily for the past 30 days
 query_30_days = f"""
 WITH daily_terms AS (
     SELECT 
@@ -40,9 +40,6 @@ job_config = bigquery.QueryJobConfig(use_query_cache=False)
 query_job_30_days = client.query(query_30_days, job_config=job_config)
 df_30_days = query_job_30_days.to_dataframe()
 print("Query executed and DataFrame created.")
-
-# Print the query results
-print(df_30_days.to_string(index=False))
 
 # Extract data for the graph (top 5 terms for each day)
 df_top5_30_days = df_30_days.groupby('date').head(5)
