@@ -1,4 +1,6 @@
 # Real-Time Dashboards Created with Plotly and Dash
+<hr style="border: 1px solid blue;">
+
 <br>
 <br>
 <div style="text-align: center;">
