@@ -1,11 +1,11 @@
-.square-box {
+.square-box-total-order {
     background-color: lightblue;
     padding: 20px;
     border-radius: 1px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-.square-box {
+.square-box-time-diff {
     background-color: lightgreen;
     padding: 20px;
     border-radius: 5px;
