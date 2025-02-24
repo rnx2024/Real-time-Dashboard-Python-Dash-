@@ -15,7 +15,7 @@ def update_top_customer_areas(month):
     fig = px.pie(
         names=top_areas.index,
         values=top_areas.values,
-        hole=.3,
+        hole=.6,
         title="Top 5 Customer Areas"
     )
     return fig
@@ -24,19 +24,12 @@ def update_top_customer_areas(month):
     Output('sentiment', 'figure'),
     [Input('month-filter', 'value')]
 )
-def update_feedback_category(month):
-    # Filter feedback data based on selected month
-    filtered_feedback_data = feedback_data[feedback_data['month'] == month]
+def update_feedback_category(month, category):
+    # Filter feedback data based on selected month and feedback category
+    filtered_feedback_data = feedback_data[(feedback_data['month'] == month) & 
+                                           (feedback_data['feedback_category'] == category)]
     
-    # Get the most common feedback category
-    top_sentiment = filtered_feedback_data['sentiment'].value_counts().idxmax()
-    top_sentiment_count = filtered_feedback_data['sentiment'].value_counts().max()
-    
-    fig = px.bar(
-        x=[top_sentiment],
-        y=[top_sentiment_count],
-        title="Top Feedback"
-    )
+   )
     return fig
 
 @app.callback(
