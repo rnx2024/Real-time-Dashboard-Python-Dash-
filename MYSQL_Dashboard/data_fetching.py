@@ -41,11 +41,15 @@ order_data = pd.read_sql(order_data_query, engine)
 feedback_data_query = """
 SELECT 
     sentiment,
+    feedback_category, 
     MONTH(feedback_date) as month 
 FROM 
     blinkit_customer_feedback
 """
 feedback_data = pd.read_sql(feedback_data_query, engine)
+
+# Group by month, feedback category, and sentiment, then count total sentiment
+aggregated_feedback_data = feedback_data.groupby(['month', 'feedback_category', 'sentiment']).size().reset_index(name='total_sentiment')
 
 # Export the data frames
 __all__ = ['delivery_data', 'customer_data', 'order_data', 'feedback_data']
