@@ -6,7 +6,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 app.layout = dbc.Container([
     dbc.Row([
-        dbc.Col(html.H1("Delivery Performance Analysis", className="text-center text-primary mb-3 mt-3", style={'fontSize': '2em'}))
+        dbc.Col(html.H1("Delivery Performance Analysis", className="text-center text-success mb-3 mt-3", style={'fontSize': '2em'}))
     ]),
     dbc.Row([
         dbc.Col([
