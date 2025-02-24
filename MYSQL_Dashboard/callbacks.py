@@ -24,12 +24,23 @@ def update_top_customer_areas(month):
     Output('sentiment', 'figure'),
     [Input('month-filter', 'value')]
 )
-def update_feedback_category(month, category):
+ def update_feedback_category(month, category):
     # Filter feedback data based on selected month and feedback category
     filtered_feedback_data = feedback_data[(feedback_data['month'] == month) & 
                                            (feedback_data['feedback_category'] == category)]
     
-   )
+    # Get the total count for each sentiment value
+    sentiment_counts = filtered_feedback_data['sentiment'].value_counts().reset_index()
+    sentiment_counts.columns = ['sentiment', 'count']
+    
+    fig = px.bar(
+        x=sentiment_counts['sentiment'],
+        y=sentiment_counts['count'],
+        title="Feedback Sentiment Count",
+        labels={'x': 'Sentiment', 'y': 'Count'},
+        color=sentiment_counts['sentiment']  # Different colors for each sentiment value
+    )
+    
     return fig
 
 @app.callback(
@@ -42,7 +53,7 @@ def update_total_order_value(month):
     total_value = filtered_order_data['order_total'].sum()
     
     return html.Div([
-        html.H4(f'Total Order Value: {total_value:.2f}', style={'color': 'white', 'fontSize': '1.2em'}),
+        html.H4(f'{total_value:.2f}', style={'color': 'white', 'fontSize': '1.2em'}),
     ], style={'padding': '10px', 'borderRadius': '5px', 'backgroundColor': '#6DA8DD', 'height': '3em'})
 
 @app.callback(
