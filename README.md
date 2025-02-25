@@ -116,7 +116,7 @@ The MYSQL_Dashboard folder contains all the code for data_fetching, callbacks, l
 
 Changes made to the dataset during migration: As MySQL have certain rules for date formats (yyyy-mm-dd), these were changed during the migration. Certain column names with reserved words in MySQL such as date, channel were also changed to facilitate full and accurate data migration. The date for the blinkit_inventorynew dataset were all changed to yyyy-mm-dd from the format mm-dd and appended with year 2024. 
 
-[Button4](https://img.shields.io/badge/NOTE:-UPDATE-green)]I have made changes to the code to derive more significant insights on Customer Feedback. The graph now shows a graph of all Sentiments from Negative, Netural to Positive based on selected month or feedback category. This would align the insights with top 5 customer areas, total order value and time difference per month as well. 
+![Button6](https://img.shields.io/badge/NOTE:-UPDATE-green)]I have made changes to the code to derive more significant insights on Customer Feedback. The graph now shows a graph of all Sentiments from Negative, Netural to Positive based on selected month or feedback category. This would align the insights with top 5 customer areas, total order value and time difference per month as well. 
 
 Here's new dashboard: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/MYSQL_Dashboard/Customer%20Feedback%20Dashboard.png)
