@@ -22,7 +22,7 @@ It provides Dash app codes on how to integrate Python with different data source
 
 - environment setup (modules and packages to be used)
 - how to connect to data source
-- how how to fetch data through pandas, boto3, bigquery client, mysql connector and SQLAlchemy
+- how to fetch data through pandas, boto3, bigquery client, mysql connector and SQLAlchemy to different data sources
 - how to create graphs and charts by using dash, plotly
 - how to implement range and dropdown filters 
 - how to use callbacks in Dash to provide real-time interactive updates for visuals
@@ -46,9 +46,6 @@ allows the use of CSS to arrange a neat and compact dashboard. By using the FLex
 ```python
 app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, children=[
 ```
-
-the dashboard is created using 2 columns and several rows to arrange a compact Dashboard that fits the screen well. 
-
 Here's the Dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dash.png)
 
