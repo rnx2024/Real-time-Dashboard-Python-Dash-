@@ -22,7 +22,7 @@ It provides Dash app codes on how to integrate Python with different data source
 
 - environment setup (modules and packages to be used)
 - how to connect to data source
-- how to fetch data through pandas, boto3, bigquery client, mysql connector and SQLAlchemy to different data sources
+- how to fetch data through pandas, boto3, bigquery client, mysql connector and SQLAlchemy from different data sources
 - how to create graphs and charts by using dash, plotly
 - how to implement range and dropdown filters 
 - how to use callbacks in Dash to provide real-time interactive updates for visuals
