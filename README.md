@@ -16,7 +16,17 @@
 <br>
 <br>
 
-This project is a collection of real-time Python Dashboards using the dash, pandas, plotly, boto3, googlecloud-bigquery, sqlalchemy packages.
+This project is a collection of real-time Python Dashboards using the dash, plotly, pandas, boto3, googlecloud-bigquery, sqlalchemy packages.
+
+It provides Dash app codes on how to integrate Python with different data sources: local CSV file, from a database, and cloud clients such as BigQuery and AWS S3. This incluedes: 
+
+- environment setup (modules and packages to be used)
+- how to connect to data source
+- how how to fetch data through pandas, boto3, bigquery client, mysql connector and SQLAlchemy
+- how to create graphs and charts by using dash, plotly
+- how to implement range and dropdown filters 
+- how to use callbacks in Dash to provide real-time interactive updates for visuals
+  
 
 1. Dataset-based Dashboard. [![Button2](https://img.shields.io/badge/Download-KaggleDataset-blue)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/real-time_dashboard.py)
 The Dashboard opens to a new tab in default browser and features real-time updates. The CSV file serves as the data source, so that
@@ -63,30 +73,38 @@ components at specific intervals and when certain filters are applied.
 
 2. BigQuery Dashboard. [![Button1](https://img.shields.io/badge/Click%20Me-BigQueryDashboard%20Code%20File-red)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/google-top-terms-addl-filters.py) This dashboard for Top Google Search terms has a location filter.The top search terms (weekly) within the last 30 days are visualized in a table and graph. 
 
-To use this new Dashboard, you must have your own BigQuery account. You can make use of the BigQuery Sandbox, which is free. 
-Read up on this for instructions on how: [![Button1](https://img.shields.io/badge/Click%20Me-BigQuerySandbox-purple)](https://cloud.google.com/bigquery/docs/sandbox)
+To run the code, you will need the following: 
 
-You will also need to install the Google Cloud CLI [![Button2](https://img.shields.io/badge/Click%20Me-InstallGoogleCloudCLI-orange)](https://cloud.google.com/sdk/docs/install). 
+- A BigQuery account. You can make use of the BigQuery Sandbox, which is free. 
+  - Read up on this for instructions on how: [![Button1](https://img.shields.io/badge/Click%20Me-BigQuerySandbox-purple)](https://cloud.google.com/bigquery/docs/sandbox)
+
+* Google Cloud CLI [![Button2](https://img.shields.io/badge/Click%20Me-InstallGoogleCloudCLI-orange)](https://cloud.google.com/sdk/docs/install). 
 Make sure that the Google Cloud CLI is set to PATH during installation. 
 
-I made use of VS Code (using the Python extension) and also installed the Google Cloud BigQuery extension. I also needed Google
-Cloud's authorization and ran this: 
+- Google Cloud's authorization. Run this to get authorization and login before running the code: 
 
 ```
 gcloud auth application-default login
 ```
-This real-time dashboard simply fetches data from the bigquery-public-data.google-trends dataset using SQL within the Python code.
-After fetching data, it then displays in a webbrowser the top google terms in a table and a graph.
+This real-time dashboard simply fetches data from the bigquery-public-data.google-trends dataset using SQL within the Python code. 
 
 Here's the dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dashboard-with-filter.png)
 
-3. AWS Cloud S3 Dashboard. [![Button1](https://img.shields.io/badge/Click%20Me-AWS%20Dashboard%20Files-pink)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/tree/main/AWSCloud-PythonDash) An AWS Cloud S3 Dashboard is added. This makes use of a dataset from an AWS Cloud S3 bucket. It retrieves the data from the S3 bucket and load it to memory. It makes use of the callback function to make real-time updates. For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient use. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python.
+3. AWS Cloud S3 Dashboard. [![Button1](https://img.shields.io/badge/Click%20Me-AWS%20Dashboard%20Files-pink)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/tree/main/AWSCloud-PythonDash) An AWS Cloud S3 Dashboard is added. This makes use of a dataset from an AWS Cloud S3 bucket. It retrieves the data from the S3 bucket and load it to memory. It makes use of:
+
+- callback function to update data based on selected location
+- dropdown location filter
+- graphs and piecharts to visualize data using plotly and dash
+
+For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient use. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python. 
 
 This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
 
-Another code file was added [![Button3](https://img.shields.io/badge/Click%20Me-AWSS3ImprovedDashboard-blue)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awss3bucket_improved_dash.py) which enhanced the design of the dashboard. Additional sytling were added to the summary statistics and the dropdown menu.
+Another code file was added [![Button3](https://img.shields.io/badge/Click%20Me-AWSS3ImprovedDashboard-blue)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awss3bucket_improved_dash.py) which enhanced the design of the dashboard. Changes made were: 
+
+- Styles for the summary statistics to improve visuals
 
 Here's the improved dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/awsclouds3bucket_enhanced-dashboard-design.png)
@@ -96,15 +114,11 @@ Here's the improved dashboard:
 
 The dashboard provides the following features:
 
-Monthly Filter: Select a month to filter the data and visualize performance for the chosen period.
-
-Top Customer Areas: Displays the top 5 customer areas in a pie chart, highlighting the distribution of customers.
-
-Top Feedback/Sentiment: Shows the most common feedback category for each month in a bar chart, offering insights into customer feedback trends.
-
-Total Order Value: Provides the total value of orders for the selected month, giving a quick overview of sales performance.
-
-Average Delivery Time Difference: Calculates and displays the average difference between promised and actual delivery times, helping to assess delivery efficiency.
+- Monthly Filter: Select a month to filter the data and visualize performance for the chosen period.
+- Top Customer Areas: Displays the top 5 customer areas in a pie chart, highlighting the distribution of customers.
+- Top Feedback/Sentiment: Shows the most common feedback category for each month in a bar chart, offering insights into customer feedback trends.
+- Total Order Value: Provides the total value of orders for the selected month, giving a quick overview of sales performance.
+- Average Delivery Time Difference: Calculates and displays the average difference between promised and actual delivery times, helping to assess delivery efficiency.
 
 Data processing and visualization are handled using the pandas library and Plotly for creating interactive graphs and charts. 
 The dashboard is built with Dash and Bootstrap for a responsive and user-friendly interface.
@@ -116,7 +130,16 @@ The MYSQL_Dashboard folder contains all the code for data_fetching, callbacks, l
 
 Changes made to the dataset during migration: As MySQL have certain rules for date formats (yyyy-mm-dd), these were changed during the migration. Certain column names with reserved words in MySQL such as date, channel were also changed to facilitate full and accurate data migration. The date for the blinkit_inventorynew dataset were all changed to yyyy-mm-dd from the format mm-dd and appended with year 2024. 
 
-![Button6](https://img.shields.io/badge/NOTE:-UPDATE-green)I have made changes to the code to derive more significant insights on Customer Feedback. The graph now shows a graph of all Sentiments from Negative, Netural to Positive based on selected month or feedback category. This would align the insights with top 5 customer areas, total order value and time difference per month as well. 
+![Button6](https://img.shields.io/badge/NOTE:-UPDATE-green) Changes to the code to derive more significant insights and focused on Customer Feedback. The dashboard now features:
+
+- A monthly filter
+- A feedback category filter
+- A donut pie showing top locations based on the month selected
+- A bar graph that show total sentiment counts based on selected month and feedback category
+- Total order value based on selected month
+- Average delivery time difference (between promised time and actual delivery time) based on selected month
+
+This dashboard now provides more comprehensive insights into customer feedback and its relation to total order value and delivery time performance, and top customer locations. 
 
 Here's new dashboard: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/MYSQL_Dashboard/Customer%20Feedback%20Dashboard.png)
