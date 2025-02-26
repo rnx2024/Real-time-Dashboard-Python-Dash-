@@ -94,7 +94,7 @@ Here's the dashboard:
 - dropdown location filter
 - graphs and piecharts to visualize data using plotly and dash
 
-For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient use. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python. 
+For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient choice. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python. 
 
 This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
