@@ -18,7 +18,7 @@
 
 This project is a collection of real-time Python Dashboards using the dash, plotly, pandas, boto3, googlecloud-bigquery, sqlalchemy packages.
 
-It provides Dash app codes on how to integrate Python with different data sources: local CSV file, from a database, and cloud clients such as BigQuery and AWS S3. This incluedes: 
+It provides Dash app codes on how to integrate Python with different data sources: local CSV file, from a database, and cloud clients such as BigQuery and AWS S3. This includes: 
 
 - environment setup (modules and packages to be used)
 - how to connect to data source
