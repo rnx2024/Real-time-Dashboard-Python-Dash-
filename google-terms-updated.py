@@ -99,7 +99,7 @@ app.layout = dbc.Container(fluid=True, children=[
             ], className="mb-3"),
             dbc.Row([
                 dbc.Col([
-                    html.H5("Weekly Top 5 Terms (Table)", className="mb-2"),
+                    html.H5("Weekly Top 5 Terms", className="mb-2"),
                     dash_table.DataTable(
                         id="terms-table",
                         columns=[
@@ -116,7 +116,7 @@ app.layout = dbc.Container(fluid=True, children=[
                     ),
                 ], width=6),
                 dbc.Col([
-                    html.H5("Weekly Top 5 Terms (Bar)", className="mb-2"),
+                    html.H5("", className="mb-2"),
                     dcc.Graph(id="bar-graph", config={"responsive": True}),
                 ], width=6),
             ]),
@@ -132,7 +132,7 @@ app.layout = dbc.Container(fluid=True, children=[
     Input("country-dropdown", "value"),
 )
 def update_country(country):
-    title = f"Google Top Search Terms (Weekly) — {START_DATE} to {END_DATE}"
+    title = f"Google Top Weekly Search Terms — {START_DATE} to {END_DATE}"
     if not country:
         return title, [], px.bar(title="No country selected")
 
