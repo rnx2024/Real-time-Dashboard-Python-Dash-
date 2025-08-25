@@ -10,7 +10,7 @@ from dash import dcc, html, dash_table, Input, Output
 import plotly.express as px
 
 # ---------------- Config ----------------
-PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT", "chatbot-446403")
+PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT")
 client = bigquery.Client(project=PROJECT_ID)
 
 # Last 30 days window (table is weekly; this yields ~4–5 weeks)
