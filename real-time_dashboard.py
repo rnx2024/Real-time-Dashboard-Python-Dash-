@@ -1,4 +1,5 @@
 import os
+import time
 import math
 import pandas as pd
 import dash
@@ -6,15 +7,35 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 
-CSV_PATH = "shopping-trends.csv"
+CSV_PATH = os.getenv("CSV_PATH", "shopping-trends.csv")
+CSV_CACHE_TTL = int(os.getenv("CSV_CACHE_TTL", "60"))  # seconds
 
-def load_data() -> pd.DataFrame:
+# ------- simple cache (per process) -------
+_cache = {"df": None, "mtime": None, "loaded_at": 0.0}
+
+def _read_csv() -> pd.DataFrame:
     df = pd.read_csv(CSV_PATH)
-    # ensure numeric
     df["Purchase Amount (USD)"] = pd.to_numeric(df["Purchase Amount (USD)"], errors="coerce").fillna(0)
     return df
 
-base_df = load_data()
+def get_data() -> pd.DataFrame:
+    try:
+        mtime = os.path.getmtime(CSV_PATH)
+    except FileNotFoundError:
+        return pd.DataFrame(columns=["Item Purchased", "Location", "Purchase Amount (USD)"])
+    now = time.time()
+    needs_reload = (
+        _cache["df"] is None
+        or (now - _cache["loaded_at"]) > CSV_CACHE_TTL
+        or _cache["mtime"] != mtime
+    )
+    if needs_reload:
+        df = _read_csv()
+        _cache.update(df=df, mtime=mtime, loaded_at=now)
+    return _cache["df"]
+
+# preload once for dropdown options
+base_df = get_data()
 
 palette = ['#4e79a7', '#59a14f', '#9c755f', '#f28e2b', '#edc948', '#e15759', '#76b7b2', '#ff9da7', '#af7aa1']
 
@@ -44,7 +65,8 @@ app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, childr
         dcc.Graph(id='top-items-graph', style={'height': '40vh'}),
         dcc.Graph(id='top-locations-graph', style={'height': '40vh'}),
     ]),
-    dcc.Interval(id='interval-component', interval=1000, n_intervals=0)
+    # consider 30000–60000 ms for non-real-time dashboards
+    dcc.Interval(id='interval-component', interval=int(os.getenv("DASH_INTERVAL_MS", "1000")), n_intervals=0)
 ])
 
 @app.callback(
@@ -62,7 +84,7 @@ app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, childr
 )
 def update_graphs(_, selected_locations):
     try:
-        data = load_data()
+        data = get_data()
 
         if selected_locations:
             data = data[data['Location'].isin(selected_locations)]
@@ -74,13 +96,11 @@ def update_graphs(_, selected_locations):
         total_amt = data['Purchase Amount (USD)'].sum()
         total_cnt = int(len(data))
 
-        # MAIN: aggregate by item to avoid color-length mismatch
         by_item = (
             data.groupby('Item Purchased', as_index=False)['Purchase Amount (USD)']
             .sum()
             .sort_values('Purchase Amount (USD)', ascending=False)
         )
-        # repeat palette as needed
         colors = (palette * math.ceil(len(by_item) / len(palette)))[:len(by_item)]
 
         main_fig = go.Figure(
@@ -92,7 +112,6 @@ def update_graphs(_, selected_locations):
             layout=go.Layout(title='Real-Time Data', xaxis=dict(title='Item Purchased'), yaxis=dict(title='Purchase Amount (USD)'))
         )
 
-        # TOP 5 ITEMS
         top_items = by_item.head(5)
         top_items_fig = go.Figure(
             data=[go.Bar(
@@ -103,7 +122,6 @@ def update_graphs(_, selected_locations):
             layout=go.Layout(title='Top 5 Items', xaxis=dict(title='Item Purchased'), yaxis=dict(title='Total Purchase Amount (USD)'))
         )
 
-        # TOP 5 LOCATIONS for those top items
         top_items_filter = data['Item Purchased'].isin(top_items['Item Purchased'])
         top_locations = (
             data[top_items_filter]
