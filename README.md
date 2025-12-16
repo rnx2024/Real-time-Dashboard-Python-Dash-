@@ -34,8 +34,6 @@ any changes or data added to the CSV will automatically be updated in the dashbo
 This shopping trend dashboard features useful analysis such as real-time purchase amounts and purchase updates, 
 top 5 purchase items and top 5 locations. A filter function for location is also added. 
 
-This project was created using the VS Code Python Extension. Git was used to commit and push the code to this repository.
-
 Here's the Dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dash.png)
 
