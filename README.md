@@ -36,37 +36,8 @@ top 5 purchase items and top 5 locations. A filter function for location is also
 
 This project was created using the VS Code Python Extension. Git was used to commit and push the code to this repository.
 
-The Timer function is used to open a web browser and run the Dash server. For fetching real-time data from the CSV file
-at regular intervals, the dcc.Interval component in Dash is used. It triggers the callback function to reload the CSV data 
-and update the graphs in real-time.
-
-The Dash server is a powerful tool that allows users to interact with graphs and visualizations through a web browser. The Dash also 
-allows the use of CSS to arrange a neat and compact dashboard. By using the FLexbox functionality (CSS), 
-
-```python
-app.layout = html.Div(style={'display': 'flex', 'flex-direction': 'row'}, children=[
-```
 Here's the Dashboard:
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/dash.png)
-
-
-By using the interval function, the real-time updates are set every second. The callback function updates the dashboard 
-components at specific intervals and when certain filters are applied. 
-
-    <i> dcc.Interval(
-        id='interval-component',
-        interval=1*1000,  
-        n_intervals=0
-    ) </i>
-
-```python
-@app.callback(
-[Output('live-update-graph', 'figure'),
- Output('top-items-graph', 'figure'),
- Output('top-locations-graph', 'figure'),
- Output('total-purchase-amount', 'children'),
- Output('total-purchase-count', 'children')],
-```
 
 2. BigQuery Dashboard. [![Button1](https://img.shields.io/badge/Click%20Me-BigQueryDashboard%20Code%20File-red)](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/google-top-terms-addl-filters.py) This dashboard for Top Google Search terms has a location filter.The top search terms (weekly) within the last 30 days are visualized in a table and graph. 
 
@@ -94,7 +65,7 @@ Here's the dashboard:
 - dropdown location filter
 - graphs and piecharts to visualize data using plotly and dash
 
-For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient choice. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python. 
+Note: For a medium dataset, loading it to a dataframe memory is quite manageable. For larger datasets, pyspark will have to be the more efficient choice. The boto3 package is used here which allows the easy interaction with AWS Cloud within Python. 
 
 This is the AWS Cloud S3 bucket Dashboard with a filter for location and summary statistics: 
 ![Dashboard](https://github.com/rnx2024/Real-time-Dashboard-Python-Dash-/blob/main/AWSCloud-PythonDash/dashboard_awss3bucket_dataset.png)
